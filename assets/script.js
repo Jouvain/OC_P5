@@ -20,7 +20,7 @@ const slides = [
 
 //compteurs (slider et bullets points)
 let compteur = 0
-let iDot = 1 // à delete ?
+let iDot = 1 
 let i2 = 0
 //récupération d'éléments
 const arrowLeft = document.querySelector("#banner .arrow_left")
@@ -52,6 +52,8 @@ slides.forEach(() =>
 	tableauDot.push(dot)}
 )
 tableauDot[0].classList.add("dot_selected")
+
+
 
 //actualise bannière selon BP cliqué
 function show(n){
@@ -111,80 +113,3 @@ function eraseDot(iDot){
 	dot.classList.remove("dot_selected")
 }
 
-
-/*********** DEPRECIE ***************/
-
-/*//fonctions de clic gauche/droite
-//Changement image/texte/BP sur bannière
-function slidingLeft(){
-	eraseDot(iDot)
-	if(compteur > 0){//si <- fonctionne
-		compteur --
-		iDot --
-	}
-	else{// sinon retour à l'autre extrêmité du carrousel
-		compteur = slides.length-1
-		iDot = slides.length
-	}
-	actualizeBanner(compteur, iDot)
-}
-function slidingRight(){
-	eraseDot(iDot)
-	if (compteur < slides.length-1){
-		compteur ++
-		iDot ++
-	}
-	else{
-		compteur = 0
-		iDot = 1
-	}
-	actualizeBanner(compteur, iDot)
-}*/
-
-
-/*//mise en place BP via for...of
-for(const valeur of slides){
-	dot = document.createElement("div")
-	dots.prepend(dot)
-	dot.classList.add("dot")
-}
-dot.classList.add("dot_selected")
-*/
-
-/*
-//mise en place de X bullets points (selon tableau)
-for(i=0 ; i < slides.length ; i++){
-	dot = document.createElement("div")
-	dots.prepend(dot)
-	dot.classList.add("dot")
-}//premier BP sélectionné au chargement de la page
-dot.classList.add("dot_selected")
-*/
-
-
-// tentatives de boucles pour gestion d'évènement su BP --- ratées
-/*
-for(i=0 ; i < tableauDot.length ; i++){
-	i2 = 0
-	tableauDot[i2].addEventListener("click",function()
-	{
-	iDot = tableauDot[i2+1]
-	compteur = i2
-	console.log(tableauDot[i2])
-	}
-	)
-	i2++
-}
-i2 = 0
-for(const valeur of tableauDot){
-	console.log(i2)
-	console.log(tableauDot[i2])
-	tableauDot[i2].addEventListener("click", function()
-		{
-			iDot=i2
-			console.log(iDot)
-		}
-	)
-	i2++
-	
-}*/
